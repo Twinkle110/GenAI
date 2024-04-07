@@ -12,7 +12,6 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 from langchain_core.prompts import PromptTemplate
-import pyperclip
 from langchain.chains import (
     StuffDocumentsChain, LLMChain, ConversationalRetrievalChain
 )
