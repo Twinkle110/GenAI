@@ -33,6 +33,20 @@ def init():
 
 def app():
     init()
+    st.markdown(
+        """
+        <style>
+        div[data-testid="stForm"]{
+            position: fixed;
+            bottom: 0;
+            width: 50%;
+            background-color: " ";
+            padding: 10px;
+            z-index: 10;
+        }
+        </style>
+        """, unsafe_allow_html=True
+    )
 
     chat = ChatOpenAI(temperature=0)
 
@@ -46,10 +60,12 @@ def app():
 
     # sidebar with user input
     # with st.sidebar:
-    user_input = st.text_area("Ask your question: ", key="user_input")
+     with st.container():
+        myfrom=st.form(key="form",clear_on_submit=True)
+        user_input = myfrom.text_area("Ask your question: ", key='user_input',value='')
 
-        # handle user input
-    if st.button("Submit"):
+     with st.container(): 
+        if myfrom.form_submit_button("Submit"):
         # handle user input
      if user_input:
               st.session_state.messages.append(HumanMessage(content=user_input))
