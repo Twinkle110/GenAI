@@ -60,14 +60,14 @@ def app():
 
     # sidebar with user input
     # with st.sidebar:
-     with st.container():
+    with st.container():
         myfrom=st.form(key="form",clear_on_submit=True)
         user_input = myfrom.text_area("Ask your question: ", key='user_input',value='')
 
-     with st.container(): 
+    with st.container(): 
         if myfrom.form_submit_button("Submit"):
         # handle user input
-     if user_input:
+            if user_input:
               st.session_state.messages.append(HumanMessage(content=user_input))
               with st.spinner("Thinking..."):
                 response = chat(st.session_state.messages)
