@@ -132,6 +132,18 @@ def get_conversation_chain(vectorstore):
     )
 
     return conversation_chain
+    
+def handle_userinput(user_question):
+    response = st.session_state.conversation({'question': user_question})
+    st.session_state.chat_history = response['chat_history']
+
+    for i, message in enumerate(st.session_state.chat_history):
+        if i % 2 == 0:
+            st.write(user_template.replace(
+                "{{MSG}}", message.content), unsafe_allow_html=True)
+        else:
+            st.write(bot_template.replace(
+                "{{MSG}}", message.content), unsafe_allow_html=True)
    
 
 def app():
@@ -167,22 +179,15 @@ def app():
             # create conversation chain
             st.session_state.conversation = get_conversation_chain(vectorstore)
     
-    with st._bottom:
-        myfrom=st.form(key="form",clear_on_submit=True)
-        user_question = myfrom.text_input("Ask your question: ", key='user_input',value='')
+   user_question = st.text_input("Ask a question about your documents:")
+    if user_question:
+        handle_userinput(user_question)
 
-    with st._bottom: 
-        if myfrom.form_submit_button("Submit"):
-            if user_question:
-                response = st.session_state.conversation({'question': user_question})
-                a=st.session_state.chat_history = response.get('chat_history', [])
-                # response = st.session_state.get('messages', [])  # <-- Not sure why you're getting 'messages' here
-
-    for i, message in enumerate(st.session_state.chat_history):
-        if i % 2 == 0:
-            st.write(user_template.replace("{{MSG}}", message.content), unsafe_allow_html=True)
-        else:
-            st.write(bot_template.replace("{{MSG}}", message.content), unsafe_allow_html=True)
+    # for i, message in enumerate(st.session_state.chat_history):
+    #     if i % 2 == 0:
+    #         st.write(user_template.replace("{{MSG}}", message.content), unsafe_allow_html=True)
+    #     else:
+    #         st.write(bot_template.replace("{{MSG}}", message.content), unsafe_allow_html=True)
             
     
             
