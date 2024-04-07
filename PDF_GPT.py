@@ -179,8 +179,8 @@ def app():
             # create conversation chain
             st.session_state.conversation = get_conversation_chain(vectorstore)
     
-user_question = st.text_input("Ask a question about your documents:")
-if user_question:
+    user_question = st.text_input("Ask a question about your documents:")
+    if user_question:
         handle_userinput(user_question)
 
     # for i, message in enumerate(st.session_state.chat_history):
