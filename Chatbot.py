@@ -40,7 +40,7 @@ def app():
             position: fixed;
             bottom: 0;
             width: 50%;
-            background-color: " ";
+            background-color: #424c54;
             padding: 10px;
             z-index: 10;
         }
