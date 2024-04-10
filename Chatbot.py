@@ -4,6 +4,7 @@ import streamlit as st
 from streamlit_chat import message
 from dotenv import load_dotenv
 import os
+import pyperclip
 
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import (
