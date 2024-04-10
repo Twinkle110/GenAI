@@ -83,15 +83,7 @@ def app():
             message(msg.content, is_user=True, key=str(i) + '_user')
         else:
             message(msg.content, is_user=False, key=str(i) + '_ai')
-            copy_button_id = f"copy_button_{i}"
-            if st.button("Copy", key=copy_button_id):
-               copy_to_clipboard(msg.content)
-
-def copy_to_clipboard(text):
-    clipboard.OpenClipboard()
-    clipboard.EmptyClipboard()
-    clipboard.SetClipboardText(text, clipboard.CF_UNICODETEXT)
-    clipboard.CloseClipboard()
+           
 
 if __name__ == '__app__':
     app()
