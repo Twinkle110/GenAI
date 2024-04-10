@@ -5,6 +5,7 @@ from streamlit_chat import message
 from dotenv import load_dotenv
 import os
 import pyperclip
+import win32clipboard as clipboard
 
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import (
@@ -86,8 +87,11 @@ def app():
             if st.button("Copy", key=copy_button_id):
                copy_to_clipboard(msg.content)
 
-def copy_to_clipboard(content):
-    pyperclip.copy(content)
+def copy_to_clipboard(text):
+    clipboard.OpenClipboard()
+    clipboard.EmptyClipboard()
+    clipboard.SetClipboardText(text, clipboard.CF_UNICODETEXT)
+    clipboard.CloseClipboard()
 
 if __name__ == '__app__':
     app()
