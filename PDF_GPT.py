@@ -196,7 +196,7 @@ def app():
     
     with st.container():
         myfrom=st.form(key="form",clear_on_submit=True)
-        user_question = myfrom.text_input("Ask your question: ", key='user_input',value='')
+        user_question = myfrom.text_area("Ask your question: ", key='user_input',value='')
 
     with st.container(): 
         if myfrom.form_submit_button("Submit"):
