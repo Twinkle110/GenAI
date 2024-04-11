@@ -155,7 +155,7 @@ def app():
         div[data-testid="stForm"]{
             position: fixed;
             bottom: 0;
-            width: 70%;
+            width: 65%;
             background-color: #2b313e;
             padding: 10px;
             z-index: 10;
