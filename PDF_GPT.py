@@ -32,7 +32,7 @@ css = '''
     background-color: #2b313e
 }
 .chat-message.bot {
-    background-color: #475063
+    background-color: #2b313e
 }
 .chat-message .avatar {
   width: 5%;
@@ -156,7 +156,7 @@ def app():
             position: fixed;
             bottom: 0;
             width: 50%;
-            background-color: #424c54;
+            background-color: #2b313e;
             padding: 10px;
             z-index: 10;
         }
