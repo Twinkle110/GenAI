@@ -48,7 +48,7 @@ def app():
         """, unsafe_allow_html=True
     )
 
-    chat = ChatOpenAI(temperature=0)
+    chat = ChatOpenAI(model="gpt-4-turbo",temperature=0)
 
     # initialize message history
     if "messages" not in st.session_state:
