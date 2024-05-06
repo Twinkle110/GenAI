@@ -64,7 +64,7 @@ def app():
         padding: 10px 10px;
         margin: 10px 0;
         border-radius: 10px;
-        width: 50%;
+        width: 100%;
     }
     .user-message {
         background-color: #2b313e; /* Adjust color as needed */
