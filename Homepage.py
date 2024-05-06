@@ -29,7 +29,7 @@ def run():
     with st.sidebar:
         app = option_menu(
             menu_title='People Success AI Bot',
-            options=['Home','Chatbot','Meeting Analyser','Work Anniversary','Email Summarizer', 'Picture GPT','Txt/Doc GPT', 'PDF GPT'],
+            options=['Home','Chatbot','Meeting Analyser', 'Picture GPT','Txt/Doc GPT', 'PDF GPT'],
             icons=['house-fill','wechat','journal-check','envelope-at','envelope-at', 'images','filetype-txt', 'filetype-pdf'],
             menu_icon='chat-text-fill',
             default_index=0,  # Set default index to 0 (Chatbot)
