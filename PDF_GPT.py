@@ -103,7 +103,7 @@ def get_conversation_chain(vectorstore):
 
     prompt_template = """
     You are an intelligent AI which analyses text from pdf, pdfs and answers the user's questions. Please answer in as much detail as possible, so that the user does not have to 
-    revisit the document. If you don't know the answer, say that you don't know, and avoid making up things.Please provide output in 4 sections.\n\n
+    revisit the document.\n\n
     Context:\n {context}?\n
     Question: \n{question}\n
 
@@ -111,9 +111,9 @@ def get_conversation_chain(vectorstore):
     """
     llm = ChatOpenAI(
             #model_name="gpt-3.5-turbo",
-            #model_name="gpt-4-1106-preview",
+            model_name="gpt-4-1106-preview"
             # model_name="gpt-4-turbo-2024-04-09"
-            model_name="gpt-4-turbo-2024-04-09"
+            #model_name="gpt-4-turbo-2024-04-09"
             
             
     )
