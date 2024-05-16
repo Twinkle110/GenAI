@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 from PyPDF2 import PdfReader
 from langchain.text_splitter import CharacterTextSplitter
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chat_models import ChatOpenAI
@@ -82,8 +83,8 @@ def get_pdf_text(pdf_docs):
 
 
 def get_text_chunks(text):
-    text_splitter = CharacterTextSplitter(
-        separator="\n",
+    text_splitter = RecursiveCharacterTextSplitter(
+        # separator="\n",
         chunk_size=1000,
         chunk_overlap=200,
         length_function=len
@@ -103,7 +104,8 @@ def get_conversation_chain(vectorstore):
 
     prompt_template = """
     You are an intelligent AI which analyses text from pdf, pdfs and answers the user's questions.Please answer in as much detail as possible, so that the user does not have to 
-    revisit the document.\n\n
+    revisit the document.If you don't know the answer, say that you don't know, and avoid making up things.Please be very accurate with what user is required for e.g if user ask to shortlist 10 records then you should be able to shortlist 10 only not more or less.\n\n
+    Context:\n\n
     Context:\n {context}?\n
     Question: \n{question}\n
 
@@ -127,6 +129,7 @@ def get_conversation_chain(vectorstore):
         llm=llm,
         retriever=vectorstore.as_retriever(),
         memory=memory,
+        combine_docs_chain_kwargs={"prompt": PROMPT}
         
     )
 
