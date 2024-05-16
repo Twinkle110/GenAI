@@ -64,7 +64,7 @@ def app():
         vector_store = FAISS.from_texts(texts, embeddings)
 
         # Access system message content
-        system_message_content = "You are an AI assistant tasked with providing response from the provided text,  Please avoid unnecessary details or tangential points." 
+        system_message_content = "You are an AI assistant tasked with providing response to users question." 
 
         result = generate_minutes(text_data, user_question, system_message_content, vector_store)
         st.write("**Output:**")
