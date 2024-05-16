@@ -93,7 +93,7 @@ def get_text_chunks(text):
 
 
 def get_vectorstore(text_chunks):
-    embeddings = OpenAIEmbeddings()
+    embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
     # embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl")
     vectorstore = FAISS.from_texts(texts=text_chunks, embedding=embeddings)
     return vectorstore
@@ -112,10 +112,7 @@ def get_conversation_chain(vectorstore):
     llm = ChatOpenAI(
             #model_name="gpt-3.5-turbo",
             model_name="gpt-4o"
-            # model_name="gpt-4-turbo-2024-04-09"
-            #model_name="gpt-4-turbo-2024-04-09"
-            
-            
+            # model_name="gpt-4-turbo-2024-04-09"  
     )
     # llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature":0.5, "max_length":512})
     
