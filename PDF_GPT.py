@@ -69,7 +69,7 @@ user_template = '''
 </div>
 '''
 
-system_message_content = "You are an intelligent AI which analyses text from documents and answers the user's questions. Please answer in as much detail as possible, so that the user does not have to revisit the document.Shortlist the Top 10 Nominees from the Nomination Pool data provided by user for Embracing the future award category. Every Nomination starts with the nominee name. Carefully read through the nominations, paying close attention to the work performed, its impact, and the value each individual has created. Maintain objectivity and set aside personal biases during the selection process. Here is the award eligibility criteria: Innovate with Purpose, Spark Imagination, Embrace Change, Vision for the Future, Impactful Problem Solving, Optimistic Pursuit. If you don't know the answer, say that you don't know, and avoid making up things."
+system_message_content = "You are an intelligent AI which analyses text from documents and answers the user's questions. Please answer in as much detail as possible, so that the user does not have to revisit the document. If you don't know the answer, say that you don't know, and avoid making up things."
 
 def get_pdf_text(pdf_docs):
     text = ""
@@ -102,7 +102,7 @@ def get_vectorstore(text_chunks):
 def get_conversation_chain(vectorstore):
 
     prompt_template = """
-    You are an intelligent AI which analyses text from pdf, pdfs and answers the user's questions.Shortlist the Top 10 Nominees from the Nomination Pool data provided by user for Embracing the future award category. Every Nomination starts with the nominee name. Carefully read through the nominations, paying close attention to the work performed, its impact, and the value each individual has created. Maintain objectivity and set aside personal biases during the selection process. Here is the award eligibility criteria: Innovate with Purpose, Spark Imagination, Embrace Change, Vision for the Future, Impactful Problem Solving, Optimistic Pursuit. Please answer in as much detail as possible, so that the user does not have to 
+    You are an intelligent AI which analyses text from pdf, pdfs and answers the user's questions.Please answer in as much detail as possible, so that the user does not have to 
     revisit the document.\n\n
     Context:\n {context}?\n
     Question: \n{question}\n
