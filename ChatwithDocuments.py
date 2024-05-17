@@ -59,7 +59,7 @@ def app():
 
         texts = text_splitter.split_text(text_data)
 
-        embeddings = OpenAIEmbeddings(openai_api_key=os.environ.get("OPENAI_API_KEY"))
+        embeddings = OpenAIEmbeddings(openai_api_key=os.environ.get("OPENAI_API_KEY"),model="text-embedding-3-large")
 
         vector_store = FAISS.from_texts(texts, embeddings)
 
