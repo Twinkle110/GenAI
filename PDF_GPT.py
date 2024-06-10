@@ -104,7 +104,7 @@ def get_conversation_chain(vectorstore):
 
     prompt_template = """
     You are an intelligent AI which analyses text from pdf, pdfs and answers the user's questions.Please answer in as much detail as possible, so that the user does not have to 
-    revisit the document.If you don't know the answer, say that you don't know, and avoid making up things.Please be very accurate with what user is required for e.g if user ask to shortlist 10 records then you should be able to shortlist 10 only not more or less.\n\n
+    revisit the document.If you don't know the answer, say that you don't know, and avoid making up things.Please be very accurate with what user is required.\n\n
     Context:\n\n
     Context:\n {context}?\n
     Question: \n{question}\n
