@@ -46,12 +46,12 @@ def run():
         Home.app()
     if app == 'Meeting Analyser':
         Meeting.app()
-    # if app == 'Email Summarizer':
-    #     Email_Summarizer.app()
+    if app == 'Email Summarizer':
+       Email_Summarizer.app()
     if app == 'Chatbot':
         Chatbot.app()
-    # if app == 'Work Anniversary':
-    #     wa.app()
+    if app == 'Work Anniversary':
+       wa.app()
     if app == 'Picture GPT':
         TA_Picture_GPT.app()
     if app == 'Txt/Doc GPT':
