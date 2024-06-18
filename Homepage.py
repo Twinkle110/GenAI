@@ -29,8 +29,8 @@ def run():
     with st.sidebar:
         app = option_menu(
             menu_title='People Success AI Bot',
-            options=['Home','Chatbot','Meeting Analyser', 'Picture GPT','Txt/Doc GPT', 'PDF GPT','Email Summarizer','Work Anniversary'],
-            icons=['house-fill','wechat','journal-check','envelope-at','envelope-at', 'images','filetype-txt', 'filetype-pdf','filetype-pdf','filetype-pdf'],
+            options=['Home','Chatbot','Meeting Analyser', 'Picture GPT','Txt/Doc GPT', 'PDF GPT','Email Summarizer','Work Anniversary','Performance Evaluation'],
+            icons=['house-fill','wechat','journal-check','envelope-at','envelope-at', 'images','filetype-txt', 'filetype-pdf','filetype-pdf','filetype-pdf','filetype-pdf'],
             menu_icon='chat-text-fill',
             default_index=0,  # Set default index to 0 (Chatbot)
             styles={
@@ -56,6 +56,8 @@ def run():
         TA_Picture_GPT.app()
     if app == 'Txt/Doc GPT':
         ChatwithDocuments.app()
+    if app == 'Performance Evaluation':
+        PEFinal.app()
     elif app == 'PDF GPT':
         PDF_GPT.app()
 
