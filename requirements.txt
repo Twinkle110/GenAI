@@ -51,6 +51,7 @@ wincertstore
 zstandard==0.21.0
 streamlit-option-menu
 docx2txt
+python-docx
 #pyperclip
 #pywin32
 langchain-community
@@ -61,3 +62,4 @@ langchain-community
 # uncomment to use instructor embeddings
 # InstructorEmbedding==1.0.1
 # sentence-transformers==2.2.2
+
