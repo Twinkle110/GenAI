@@ -11,6 +11,7 @@ import Meeting
 import wa
 import ChatwithDocuments
 import PEFinal
+import FinalInterview
 
 # Define a function to import and run a page script dynamically
 def run_page(page_name):
@@ -30,8 +31,8 @@ def run():
     with st.sidebar:
         app = option_menu(
             menu_title='People Success AI Bot',
-            options=['Home','Chatbot','Meeting Analyser', 'Picture GPT','Txt/Doc GPT', 'PDF GPT','Email Summarizer','Work Anniversary','Performance Evaluation'],
-            icons=['house-fill','wechat','journal-check','envelope-at','envelope-at', 'images','filetype-txt', 'filetype-pdf','filetype-pdf','filetype-pdf','filetype-pdf'],
+            options=['Home','Chatbot','Meeting Analyser', 'Picture GPT','Txt/Doc GPT', 'PDF GPT','Email Summarizer','Work Anniversary','Performance Evaluation','Interview Analyser'],
+            icons=['house-fill','wechat','journal-check','envelope-at','envelope-at', 'images','filetype-txt', 'filetype-pdf','envelope-at-fill','cake','person-workspace','person-workspace'],
             menu_icon='chat-text-fill',
             default_index=0,  # Set default index to 0 (Chatbot)
             styles={
@@ -59,6 +60,8 @@ def run():
         ChatwithDocuments.app()
     if app == 'Performance Evaluation':
         PEFinal.app()
+    if app == 'Interview Analyser':
+        FinalInterview.app()
     elif app == 'PDF GPT':
         PDF_GPT.app()
 
