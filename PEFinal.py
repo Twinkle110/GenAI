@@ -30,10 +30,14 @@ def generate_minutes(text_data,system_message_content, vector_store):
 
 def app():
     # System message
+    st.subheader("Performance Analyser")
     
     st.write("This apps can analyze data from end-of-year performance reviews, goal achievement (employee vs manager submission).")
 
-    uploaded_file = st.file_uploader("Choose a .pdf file", "pdf")
+    #uploaded_file = st.file_uploader("Choose a .pdf file", "pdf")
+    uploaded_file = st.file_uploader("Please upload your pdf here:",type=["pdf"])
+
+    #file_docs = st.file_uploader("Upload your DOC, TXT, or Audio files here:", type=["docx", "txt", "wav", "mp3"], accept_multiple_files=True)
 
     # Chat option
     # user_question = st.text_input("Ask a question about the document:")
