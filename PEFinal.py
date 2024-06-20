@@ -30,7 +30,8 @@ def generate_minutes(text_data,system_message_content, vector_store):
 
 def app():
     # System message
-    st.write("Please upload a .pdf file to generate minutes of the meeting.")
+    
+    st.write("This apps can analyze data from end-of-year performance reviews, goal achievement (employee vs manager submission).")
 
     uploaded_file = st.file_uploader("Choose a .pdf file", "pdf")
 
