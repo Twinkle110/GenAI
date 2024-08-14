@@ -8,7 +8,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
-import pyperclip
+#import pyperclip
 #import win32clipboard as clipboard
 
 load_dotenv()
