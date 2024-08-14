@@ -7,6 +7,9 @@ import TA_Picture_GPT
 import PDF_GPT
 import Home
 import Email_Summarizer
+import EmailAnalyzerModule
+import QnAwithemail
+import EmailResponse
 import Meeting
 import wa
 import ChatwithDocuments
@@ -50,7 +53,7 @@ def run():
     if app == 'Meeting Analyser':
         Meeting.app()
     if app == 'Email Summarizer':
-       Email_Summarizer.app()
+       EmailAnalyzerModule.app()
     if app == 'Chatbot':
         Chatbot.app()
     if app == 'Work Anniversary':
