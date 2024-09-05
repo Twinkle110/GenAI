@@ -14,7 +14,7 @@ def app():
 
     # Function to load Gemini model and get responses
     #model = genai.GenerativeModel('gemini-pro-vision')
-     model = genai.GenerativeModel('gemini-1.5-flash')
+     model = genai.GenerativeModel('gemini-1.0-pro')
 
     def get_gemini_response(input, image):
         if input != "":
