@@ -13,7 +13,8 @@ def app():
     genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
     # Function to load Gemini model and get responses
-    model = genai.GenerativeModel('gemini-pro-vision')
+    #model = genai.GenerativeModel('gemini-pro-vision')
+     model = genai.GenerativeModel('gemini-1.5-flash')
 
     def get_gemini_response(input, image):
         if input != "":
