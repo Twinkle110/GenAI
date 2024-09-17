@@ -27,7 +27,7 @@ def run_page(page_name):
 def app():
     st.subheader("Meeting Notes Summarizer")
 
-    app = option_menu(None,['QnA','Meeting Minutes', 'Sentiment Analysis','Who Said What'],
+    app = option_menu(None,['Meeting Minutes', 'Sentiment Analysis','Who Said What','QnA'],
         # menu_title="Select the menu below :",
         icons=['wechat', 'filetype-pdf','megaphone'],
         default_index=0, 
