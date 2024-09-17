@@ -35,8 +35,8 @@ def run():
     with st.sidebar:
         app = option_menu(
             menu_title='People Success AI Bot',
-            options=['Home','Chatbot','Meeting Analyser', 'Picture GPT','Txt/Doc GPT', 'PDF GPT','Email Summarizer','Work Anniversary','Performance Evaluation','Interview Analyser'],
-            icons=['house-fill','wechat','journal-check','images','filetype-txt','filetype-txt','envelope-at-fill','cake','person-workspace','person-workspace'],
+            options=['Home','Chatbot','Meeting Analyser', 'Picture GPT','Txt/Doc GPT', 'PDF GPT','Email Summarizer','Work Anniversary'],
+            icons=['house-fill','wechat','journal-check','images','filetype-txt','filetype-txt','envelope-at-fill','cake'],
             menu_icon='chat-text-fill',
             default_index=0,  # Set default index to 0 (Chatbot)
             styles={
