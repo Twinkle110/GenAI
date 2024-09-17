@@ -28,7 +28,7 @@ def run_page(page_name):
 def app():
     st.subheader("Email Analyser")
 
-    app = option_menu(None,['QnA','Email Summarizer', 'Generate Next Response'],
+    app = option_menu(None,['Email Summarizer', 'Generate Next Response','QnA'],
         # menu_title="Select the menu below :",
         icons=['wechat', 'filetype-pdf','megaphone'],
         default_index=0, 
