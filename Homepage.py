@@ -62,10 +62,10 @@ def run():
         TA_Picture_GPT.app()
     if app == 'Txt/Doc GPT':
         ChatwithDocuments.app()
-    if app == 'Performance Evaluation':
-        PEFinal.app()
-    if app == 'Interview Analyser':
-        FinalInterview.app()
+    #if app == 'Performance Evaluation':
+     #   PEFinal.app()
+    #if app == 'Interview Analyser':
+     #   FinalInterview.app()
     elif app == 'PDF GPT':
         PDF_GPT.app()
 
