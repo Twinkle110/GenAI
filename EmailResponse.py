@@ -7,7 +7,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQA
-from langchain.llms import OpenAI
+#from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
 #import pyperclip
 #import win32clipboard as clipboard
 
@@ -17,7 +18,8 @@ load_dotenv()
 def work_anniversary_message(text_data, system_message_content, vector_store):
     prompt = f"{system_message_content}\nPlease draft an good email: {text_data}"
     qa = RetrievalQA.from_chain_type(
-        llm=OpenAI(model_name="gpt-4-1106-preview"),
+        #llm=OpenAI(model_name="gpt-4-1106-preview"),
+        llm=ChatOpenAI(model_name="gpt-4-1106-preview"),
         chain_type="stuff",
         retriever=vector_store.as_retriever(),
         return_source_documents=False
