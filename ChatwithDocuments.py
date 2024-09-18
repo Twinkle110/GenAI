@@ -7,7 +7,8 @@ from dotenv import load_dotenv
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
-from langchain.llms import OpenAI
+#from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQA
 
 load_dotenv()
@@ -15,7 +16,8 @@ load_dotenv()
 def generate_minutes(text_data, user_question, system_message_content, vector_store):
     prompt = f"{system_message_content}\nUser Question: {user_question}\nPlease answer the user question: {text_data}"
     qa = RetrievalQA.from_chain_type(
-        llm=OpenAI(model_name="gpt-4o"),
+        #llm=OpenAI(model_name="gpt-4o"),
+        llm=ChatOpenAI(model_name="gpt-4o"),
         chain_type="stuff",
         retriever=vector_store.as_retriever(),
         return_source_documents=False,
