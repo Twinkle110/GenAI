@@ -22,7 +22,7 @@ load_dotenv()
 def generate_minutes(text_data, system_message_content, vector_store):
     prompt = f"{system_message_content}\nPlease generate meeting minutes from given text: {text_data}"
     qa = RetrievalQA.from_chain_type(
-        llm=OpenAI(model="gpt-4o"),
+        llm=OpenAI(model_name="gpt-4o"),
         # llm=OpenAI(model_name="text-davinci-003"),
         chain_type="stuff",
         retriever=vector_store.as_retriever(),
