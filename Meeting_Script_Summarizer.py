@@ -7,7 +7,8 @@ from langchain.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
-from langchain.llms import OpenAI
+#from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
 from io import BytesIO
 import docx2txt 
 from langchain.chains import RetrievalQA
@@ -22,7 +23,8 @@ load_dotenv()
 def generate_minutes(text_data, system_message_content, vector_store):
     prompt = f"{system_message_content}\nPlease generate meeting minutes from given text: {text_data}"
     qa = RetrievalQA.from_chain_type(
-        llm=OpenAI(model_name="gpt-4o"),
+        #llm=OpenAI(model_name="gpt-4o"),
+        llm=ChatOpenAI(model_name="gpt-4o"),
         # llm=OpenAI(model_name="text-davinci-003"),
         chain_type="stuff",
         retriever=vector_store.as_retriever(),
