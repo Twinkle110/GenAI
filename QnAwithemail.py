@@ -17,7 +17,8 @@ load_dotenv()
 def generate_minutes(text_data, user_question, system_message_content, vector_store):
     prompt = f"{system_message_content}\nUser Question: {user_question}\nPlease answer the user question: {text_data}"
     qa = RetrievalQA.from_chain_type(
-        llm=OpenAI(model_name="gpt-4o"),
+        #llm=OpenAI(model_name="gpt-4o"),
+        llm=ChatOpenAI(model_name="gpt-4o"),        
         chain_type="stuff",
         retriever=vector_store.as_retriever(),
         return_source_documents=False,
