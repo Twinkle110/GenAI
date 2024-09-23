@@ -4,7 +4,7 @@ from streamlit_option_menu import option_menu
 
 
 import Meeting_Script_Summarizer
-import SentiAnalysis
+#import SentiAnalysis
 import WhoSaidWhat
 import QnAwithMeetScript
 # import PDF_GPT
@@ -27,9 +27,9 @@ def run_page(page_name):
 def app():
     st.subheader("Meeting Notes Summarizer")
 
-    app = option_menu(None,['QnA','Meeting Minutes', 'Sentiment Analysis','Who Said What'],
+    app = option_menu(None,['Meeting Minutes','Who Said What','QnA'],
         # menu_title="Select the menu below :",
-        icons=['wechat', 'filetype-pdf','megaphone','megaphone'],
+        icons=['wechat','megaphone','megaphone'],
         default_index=0, 
         orientation='horizontal', # Set default index to 0 (Chatbot)
         styles={
@@ -44,8 +44,8 @@ def app():
 
     if app == 'Meeting Minutes':
         Meeting_Script_Summarizer.app()
-    if app == 'Sentiment Analysis':
-        SentiAnalysis.app()
+    #if app == 'Sentiment Analysis':
+     #   SentiAnalysis.app()
     if app == 'QnA':
         QnAwithMeetScript.app()
     elif app == 'Who Said What':
