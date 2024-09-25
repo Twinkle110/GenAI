@@ -84,14 +84,14 @@ def app():
             content = result["result"]
             st.write(result["result"])
             
-            st.button("Copy",on_click=copy_to_clipboard(content),key=123)
+            #st.button("Copy",on_click=copy_to_clipboard(content),key=123)/
         
         # pyperclip.copy(res)  # Copy text to clipboard using pyperclip
         # st.success("Message copied to clipboard!")
         
-def copy_to_clipboard(res):
-    pyperclip.copy(res)  # Copy text to clipboard using pyperclip
-    st.success("Message copied to clipboard!")
+#def copy_to_clipboard(res):/
+    #pyperclip.copy(res)  # Copy text to clipboard using pyperclip/
+    #st.success("Message copied to clipboard!")/
     # print("Inside fun",res)
     # if st.button("Copy"):
     #     print("Inside Fun:")         
