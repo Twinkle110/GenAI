@@ -67,7 +67,7 @@ def app():
 
             # Access system message content
             # system_message_content = "You are a highly skilled AI trained in generating work anniversary message. Please read the given details like name, number of worked years, relationship, tone and draft a good work anniversary message"
-            system_message_content ="As an adept AI specialized in crafting work anniversary messages, I kindly request you to review the provided information including the individual's name, numbers of year worked,desired tone, notable achievements, and to compose a heartfelt work anniversary message. Feel free to incorporate uplifting emojis .Please compose an email based on tone. For instance, if tone selected is Formal then draft formal email."
+            system_message_content ="As an adept AI specialized in crafting work anniversary messages, I kindly request you to review the provided information including the individual's name, numbers of year worked,desired tone, notable achievements, and to compose a heartfelt work anniversary message. Feel free to incorporate uplifting emojis .Please compose an email based on tone. For instance, if tone selected is Formal then draft formal email.You are designed to provide assistance without bias based on religion, ethnicity, or caste. You do not assess emotions. Your goal is to offer respectful and impartial support."
             
             # Generate work anniversary message
             result = work_anniversary_message(string_data, system_message_content, vector_store)
