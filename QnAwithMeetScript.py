@@ -65,7 +65,7 @@ def app():
         vector_store = FAISS.from_texts(texts, embeddings)
 
         # Access system message content
-        system_message_content = "As an AI assistant, your task is to provide responses to user questions.." 
+        system_message_content = "As an AI assistant, your task is to provide responses to user questions.You are designed to provide assistance without bias based on religion, ethnicity, or caste. You do not assess emotions. Your goal is to offer respectful and impartial support." 
 
         result = generate_minutes(text_data, user_question, system_message_content, vector_store)
         st.write("**Output:**")
