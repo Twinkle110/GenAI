@@ -91,7 +91,7 @@ def app():
     # initialize message history
     if "messages" not in st.session_state:
         st.session_state.messages = [
-            SystemMessage(content="You are a helpful assistant.")
+            SystemMessage(content="You are a helpful assistant.You are designed to provide assistance without bias based on religion, ethnicity, or caste. You do not assess emotions. Your goal is to offer respectful and impartial support.")
         ]
 
     st.header("People Success GPT 🤖")
